@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Flowers School</title>
+    <style>
+        body {
+            /* Set the background image and adjust transparency */
+            background-image: url('background img.jpg');
+            background-position: center;
+            background-size: 1000px;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: rgba(255, 255, 255, 0.8); /* Adjust the alpha value for transparency */
+            font-family: Arial, sans-serif;
+        }
+        /* Customize other styles as needed */
+        nav {
+    display: flex;
+    justify-content: space-between; /* Space between logo and links */
+    align-items: center;
+    width: 100%; /* Make nav take full width */
+    background-color: rgb(186, 152, 223)
+
+}
+
+nav img {
+    height: 60px; /* Adjust as needed */
+    margin: 0; /* Space between logo and links */
+    float: left;
+}
+
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+   
+    
+}
+
+nav ul li {
+    margin-right: 10px;
+    float:right;
+   
+}
+
+nav ul li a {
+    color: #221c49;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="schoolLogo.png" alt="Spring Flowers School Logo">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <!-- <li><a href="#">Student Profile</a></li> -->
+            </ul>
+        </nav>
+       
+    </header>
+    <main>
+        <section id="welcome">
+            <h1 id="welcome-text">Welcome to Spring Flowers School</h1>
+        </section>
+        <h2>Student Profile</h2>
+        <section id="student-info" style="display: none;">
+            <h2>Student Information</h2>
+            <p>Name: Arpita Sahoo</p>
+            <p>Grade: 10</p>
+            <p>Age: 20</p>
+        </section>
+        
+        <button onclick="toggleStudentProfile()">View Profile</button>
+        
+        <script>
+
+            const welcomeText = document.getElementById('welcome-text');
+
+            welcomeText.style.opacity = '0';
+            setTimeout(() => {
+            welcomeText.style.transition = 'opacity 2s ease-in-out';
+            welcomeText.style.opacity = '1';
+            }, 500);
+
+            function toggleStudentProfile() {
+                const studentInfo = document.getElementById("student-info");
+                studentInfo.style.display = studentInfo.style.display === "none" ? "block" : "none";
+            }
+        </script>
+    </main>
+</body>
+</html>
